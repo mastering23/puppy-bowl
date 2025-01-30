@@ -21,7 +21,7 @@
 const element = document.getElementById("myElement"); 
 
 // Set the display property to "none"
-element.style.display = "none"; to show on and off data 
+element.style.display = "none" /"block"; to show on and off data 
 
     - Get back to the roster from the details page
 

@@ -4,9 +4,12 @@
 
 const state = {
   playersList:[],
-  PlayerDetails:[],
+  playerShowDetails:false,
 
 };
+
+// console.log(state.playerShowDetails); testing return false so that means i can use some if  statements !
+
 
 // 1) Create a fetch ✅
 
@@ -43,37 +46,26 @@ const renderPlayersList = () => {
 
 
 //texting 
-const showAndHiddeNodes = ()=>{
-//title h1
+const showDetailsSwitch = ()=>{
+
 const elementTitle = document.querySelector("#main"); 
-elementTitle.style.display = "none";
-//h2 players list  to players list | details
 const elementSubTitle = document.querySelector('h2');
-elementSubTitle.innerText =`Players list | details`; 
-//hiding button
 const elementBtn1 = document.querySelector('btn1');
-elementBtn1.style.display = "block";
 
-renderPlayersList2();
+if(state.playerShowDetails){
+  
+  elementTitle.style.display ="block";
+  elementSubTitle.style.display = "PLAYERS LIST";
+  elementBtn1.innerHTML ='SHOw DETAILS';
+  
+}else{
+  
+  elementTitle.style.display ="none";
+  elementSubTitle.style.display = "PLAYERS | DETAILS ";
+  elementBtn1.innerHTML ='SHOw DETAILS';
 
+}
 };
 
-// testing  the previews render and show the second 2 i might refactory just to test my logic work 
-const renderPlayersList2 = () => {
-
-  ol = document.querySelector("ol");
-
-  ol.innerHTML = '';
-  il.innerHTML= "";
-
-  state.playersList.forEach((player) => {
-
-    const li =document.createElement("li");
-    li.innerHTML = `Players: ${player.name}, Breed: ${player.breed}, Status: ${player.status}`; //  
-    // console.log(ol);
-    ol.append(li);
-
-  });
-};
 
 getDataApi();
