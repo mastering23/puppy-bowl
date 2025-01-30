@@ -15,6 +15,14 @@
     -  Display the roster✅
 ![alt text](image-3.png)
     - Display player details 
+    i am planning to use 
+    
+    // Get the element you want to hide
+const element = document.getElementById("myElement"); 
+
+// Set the display property to "none"
+element.style.display = "none"; to show on and off data 
+
     - Get back to the roster from the details page
 
 ----------------------------------------------------------------

@@ -14,7 +14,7 @@ const getDataApi = async () => {
     `https://fsa-puppy-bowl.herokuapp.com/api/2501-FTB-ET-WEB-FT/players`
   );
   const response = await res.json();
-  console.log(response); //testing
+  // console.log(response); //testing
   state.playersList = response.data.players;
 
   renderPlayersList();
@@ -33,15 +33,24 @@ const renderPlayersList = () => {
   state.playersList.forEach((player) => {
 
     const li =document.createElement("li");
-    li.innerHTML = `Players :  ${player.name} `; //  Breed: ${player.breed}, Status: ${player.status}
+    li.innerHTML = `Players: ${player.name}, `; //  Breed: ${player.breed}, Status: ${player.status}
     // console.log(ol);
     ol.append(li);
 
   });
-  
-
 };
 
+//texting 
+const showAndHiddeNodes = ()=>{
+//title h1
+const elementTitle = document.querySelector("#main"); 
+elementTitle.style.display = "none";
+//h2 players list  to players list | details
+const elementSubTitle = document.querySelector('h2');
+elementSubTitle.innerText =`Players list | details`; 
+const elementBtn =document.querySelector('button');
+elementBtn.style.display ="none";
+};
 
 
 getDataApi();
