@@ -40,13 +40,13 @@ const renderPlayersList = () => {
 
    if(state.playerShowDetails){
    
-    li.innerHTML = li.innerHTML = `Players: ${player.name} <br> Breed: ${player.breed} <br> Status: ${player.status} <br> Team ID: ${player.teamId} <br> <img src="${player.imageUrl}" alt="Player Image"> <br><br> <hr>`;
+    li.innerHTML = li.innerHTML = `Players: ${player.name} <hr>Details <br> Breed: ${player.breed} <br> Status: ${player.status} <br> Team ID: ${player.teamId} <br> <img src="${player.imageUrl}" alt="Player Image"> <br><br> <hr>`;
     ;
     ol.append(li);
 
    }else{
    
-    li.innerHTML = `Players: ${player.name}, <br> <hr> `; //  Breed: ${player.breed}, Status: ${player.status}
+    li.innerHTML = `Player: ${player.name} <br> <hr> `; //  Breed: ${player.breed}, Status: ${player.status}
     // console.log(ol);
     ol.append(li);
    }
@@ -66,13 +66,13 @@ if(state.playerShowDetails){
   
   elementTitle.style.display ="block";
   elementSubTitle.innerText = "PLAYERS LIST";
-  elementBtn1.innerHTML ="SHOW DETAILS";
+  elementBtn1.innerHTML ="SHOW DETAILS 🦴";
 
 }else{
   
   // elementTitle.style.display ="none";
   elementSubTitle.innerText= "PLAYERS | DETAILS ";
-  elementBtn1.innerHTML ='GO BACK';
+  elementBtn1.innerHTML ='GO BACK 🦴';
 
 }
 
