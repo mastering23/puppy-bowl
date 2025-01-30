@@ -4,8 +4,12 @@
 
 const state = {
   playersList:[],
+  playerShowDetails:false,
 
 };
+
+// console.log(state.playerShowDetails); testing return false so that means i can use some if  statements !
+
 
 // 1) Create a fetch ✅
 
@@ -32,16 +36,52 @@ const renderPlayersList = () => {
 
   state.playersList.forEach((player) => {
 
-    const li =document.createElement("li");
-    li.innerHTML = `Players :  ${player.name} `; //  Breed: ${player.breed}, Status: ${player.status}
-    // console.log(ol);
+  const li =document.createElement("li");
+
+   if(state.playerShowDetails){
+   
+    li.innerHTML = li.innerHTML = `Players: ${player.name} <br> Breed: ${player.breed} <br> Status: ${player.status} <br> Team ID: ${player.teamId} <br> <img src="${player.imageUrl}" alt="Player Image"> <br><br> <hr>`;
+    ;
     ol.append(li);
 
-  });
-  
+   }else{
+   
+    li.innerHTML = `Players: ${player.name}, <br> <hr> `; //  Breed: ${player.breed}, Status: ${player.status}
+    // console.log(ol);
+    ol.append(li);
+   }
 
+  });
 };
 
+
+//texting - Display player details ✅
+const showDetailsSwitch = ()=>{
+
+const elementTitle = document.querySelector("#main"); 
+const elementSubTitle = document.querySelector('h2');
+const elementBtn1 = document.querySelector('#btn1');
+
+if(state.playerShowDetails){
+  
+  elementTitle.style.display ="block";
+  elementSubTitle.innerText = "PLAYERS LIST";
+  elementBtn1.innerHTML ="SHOW DETAILS";
+
+}else{
+  
+  // elementTitle.style.display ="none";
+  elementSubTitle.innerText= "PLAYERS | DETAILS ";
+  elementBtn1.innerHTML ='GO BACK';
+
+}
+
+state.playerShowDetails = !state.playerShowDetails;
+//- Get back to the roster from the details page✅
+
+renderPlayersList();
+
+};
 
 
 getDataApi();
