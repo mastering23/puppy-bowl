@@ -10,8 +10,10 @@
 
 
 ---------------------------------------------------------------
-- 3) Create a display -> Render function
-    -  Display the roster
+- 3) Create a display -> Render function✅
+![alt text](image-2.png)
+    -  Display the roster✅
+![alt text](image-3.png)
     - Display player details 
     - Get back to the roster from the details page
 
